@@ -12,8 +12,8 @@
 </head>
 <body>
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">MyRecommender</a>
+    <div class="nav-wrapper container" style="width:100%;">
+      <a id="logo-container" href="#" class="brand-logo" style="">MyRecommender</a>
       <?php
         //echo Auth::check();
         if(Auth::guest())

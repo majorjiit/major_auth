@@ -31,12 +31,12 @@ trait RegistersUsers
 		//echo "hi i am in register function";
 		
         $this->validator($request->all())->validate();
-		echo "user validated\n";
+		//echo "user validated\n";
         event(new Registered($user = $this->create($request->all())));
-		echo "registered user is created";
+		//echo "registered user is created";
         $this->guard()->login($user);
-		echo "user logged in";
-        return redirect($this->redirectPath());
+		//echo "user logged in";
+        return redirect('/user/'.$request['username']);
     }
 
     /**

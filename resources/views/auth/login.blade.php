@@ -21,7 +21,7 @@
         <div class="row">
           <div class="input-field col s12 center">
             <img src="http://w3lessons.info/logo.png" alt="" class="responsive-img valign profile-image-login">
-            <p class="center login-form-text">W3lessons - Material Design Login Form</p>
+            <h4 class="center login-form-text">MyRecommender</h4>
           </div>
         </div>
         <div class="row margin">

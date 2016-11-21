@@ -12,7 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div class="row" id="register-page">
+        <div class="row" id="register-page" style="background-color:#2bbbad;">
             <div class="col s12 m4 l3"></div>
             <div class="col s12 m4 l6 z-depth-6 card-panel">
                 <form class="register-form" role="form" method="POST" action="{{ url('/register') }}">
@@ -21,7 +21,7 @@
                     <div class="row">
                       <div class="input-field col s12 center">
                         <img src="http://w3lessons.info/logo.png" alt="" class="responsive-img valign profile-image-login">
-                        <p class="center login-form-text">W3lessons - Material Design Login Form</p>
+                        <h4 class="center login-form-text">Register</h4>
                       </div>
                     </div>
 
@@ -97,6 +97,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
         <script>
+            @if($errors->first('username'))
+                $('#username').addClass('invalid');
+                console.log("error in username");
+            @endif
             @if($errors->first('email'))
                 $('#email').addClass('invalid');
                 console.log("error in email");

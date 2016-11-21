@@ -5,7 +5,7 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
-
+use App;
 trait AuthenticatesUsers
 {
     use RedirectsUsers, ThrottlesLogins;
@@ -88,9 +88,14 @@ trait AuthenticatesUsers
         $request->session()->regenerate();
 
         $this->clearLoginAttempts($request);
-
+        echo $this->redirectPath().$request['username'];
+        $user = App\User::where('email', $request['email'])->get();
+        // $user = json_decode($user);
+        $username=$user[0]->username;
+        //echo $user;
+        //die();
         return $this->authenticated($request, $this->guard()->user())
-                ?: redirect()->intended($this->redirectPath());
+                ?: redirect()->intended("/user/".$username);
     }
 
     /**
